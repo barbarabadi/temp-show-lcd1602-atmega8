@@ -24,9 +24,9 @@ void showtemp(unsigned int adcval)
    if (i>20)
    {
       i=0;
-      tm=adcval/4;
-      tm2=(adcval-tm*4)*10/4;
-      sprintf(buffer,"+%2d.%1d",tm,tm2);
+      tm=(adcval+1)/4;
+      tm2=((adcval-tm*4)+1)/2;
+      sprintf(buffer,"+%2d.%1d",tm,5*tm2);
       lcd_gotoxy(9,0);
       lcd_puts(buffer);
       lcd_putchar(223);
